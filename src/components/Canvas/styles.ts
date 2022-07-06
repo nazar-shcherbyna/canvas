@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const CanvasWrappSC = styled.div`
-    padding: 20px;
+    padding: 10px 20px;
     flex-grow: 1;
     display: flex;
 `

@@ -11,7 +11,7 @@ class CanvasState {
     setCanvas(canvasElement: HTMLCanvasElement) {
         this.canvas = canvasElement
         this.canvas.width = window.innerWidth - 40 - 200
-        this.canvas.height = window.innerHeight - 40 - 30
+        this.canvas.height = window.innerHeight - 30 - 40
     }
 }
 

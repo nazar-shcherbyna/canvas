@@ -1,4 +1,4 @@
-export class AbstractNode {
+export abstract class AbstractNode {
     x: number
     y: number
 
