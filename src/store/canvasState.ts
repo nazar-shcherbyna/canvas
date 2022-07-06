@@ -4,6 +4,7 @@ class CanvasState {
     canvas!: HTMLCanvasElement
 
     constructor() {
+        console.log('CanvasState');
         makeAutoObservable(this)
     }
 

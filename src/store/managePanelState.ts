@@ -5,16 +5,13 @@ import canvasState from './canvasState';
 
 class ManagePanelState {
     selectedType = 'draw'
-    configs: [Draw, Rectangle] = [
-        new Draw(canvasState.canvas),
-        new Rectangle(canvasState.canvas),
-    ]
-    current: Draw | Rectangle = this.configs[0]
+    configs!: [Draw, Rectangle]
+    current!: Draw | Rectangle
     isUserAction = false
 
     constructor() {
         makeAutoObservable(this)
-        this.init()
+        console.log('ManagePanelState');
     }
 
     setSelectedType(selectedType: string) {
@@ -26,7 +23,13 @@ class ManagePanelState {
     }
     
     change(configType: string) {
+        console.log('ManagePanelState change');
         if (!this.isUserAction) {
+            this.configs = [
+                new Draw(canvasState.canvas),
+                new Rectangle(canvasState.canvas),
+            ]
+            this.current = this.configs[0]
             this.current.mount()
         }
         if (configType !== this.current.configType) {
@@ -35,12 +38,6 @@ class ManagePanelState {
             this.current = this.configs[index]
             this.current.mount()
         }
-    }
-
-    init() {
-        console.log('init');
-        this.change(this.current.configType)
-    
     }
 }
 
