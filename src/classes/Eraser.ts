@@ -1,18 +1,18 @@
 import { AbstractConfig } from '../abstractClasses/AbstractConfig'
 
-export class Draw extends AbstractConfig {
+export class Eraser extends AbstractConfig {
     isDownMouse: boolean
 
     constructor(canvas: HTMLCanvasElement) {
-        console.log('Draw');
-        super(canvas, 'draw')
+        console.log('Eraser');
+        super(canvas, 'eraser')
         this.isDownMouse = false
     }
 
     mount() {
-        console.log('mount Draw')
-        console.log('Draw canvas', this.canvas);
-        console.log('Draw ctx', this.ctx);
+        console.log('mount Eraser')
+        console.log('Eraser canvas', this.canvas);
+        console.log('Eraser ctx', this.ctx);
         this.canvas.onmousedown = this.onMouseDown.bind(this)
         this.canvas.onmousemove = this.onMouseMove.bind(this)
         this.canvas.onmouseup = this.onMouseUp.bind(this)
@@ -20,7 +20,7 @@ export class Draw extends AbstractConfig {
     }
 
     unmount() {
-        console.log('unmount Draw')
+        console.log('unmount Eraser')
         this.canvas.onmousedown = null
         this.canvas.onmousemove = null
         this.canvas.onmouseup = null
@@ -28,9 +28,9 @@ export class Draw extends AbstractConfig {
     }
 
     onMouseDown(e: MouseEvent) {
-        this.ctx.fillStyle = '#000'
-        this.ctx.strokeStyle = '#000'
-        this.ctx.lineWidth = 2
+        this.ctx.fillStyle = 'rgb(205,255,255)'
+        this.ctx.strokeStyle = 'rgb(205,255,255)'
+        this.ctx.lineWidth = 10
         this.isDownMouse = true
         console.log('onMouseDown', this.canvas);
         this.ctx.beginPath()
