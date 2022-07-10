@@ -11,13 +11,13 @@ export const ManagePanel = observer(() => {
             <div className="manage-panel__buttons">
                 <ManageButtonSC 
                     selected={managePanelState.selectedType === 'draw'}
-                    onClick={() => managePanelState.setSelectedType('draw')}
+                    onClick={() => managePanelState.change('draw')}
                 >
                     Draw
                 </ManageButtonSC>
                 <ManageButtonSC 
                     selected={managePanelState.selectedType === 'rectangle'}
-                    onClick={() => managePanelState.setSelectedType('rectangle')}
+                    onClick={() => managePanelState.change('rectangle')}
                 >
                     Rectangle
                 </ManageButtonSC>

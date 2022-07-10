@@ -10,6 +10,9 @@ export class Eraser extends AbstractConfig {
     }
 
     mount() {
+        this.ctx.fillStyle = 'rgb(205,255,255)'
+        this.ctx.strokeStyle = 'rgb(205,255,255)'
+        this.ctx.lineWidth = 10
         console.log('mount Eraser')
         console.log('Eraser canvas', this.canvas);
         console.log('Eraser ctx', this.ctx);
@@ -28,9 +31,6 @@ export class Eraser extends AbstractConfig {
     }
 
     onMouseDown(e: MouseEvent) {
-        this.ctx.fillStyle = 'rgb(205,255,255)'
-        this.ctx.strokeStyle = 'rgb(205,255,255)'
-        this.ctx.lineWidth = 10
         this.isDownMouse = true
         console.log('onMouseDown', this.canvas);
         this.ctx.beginPath()

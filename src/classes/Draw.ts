@@ -10,6 +10,9 @@ export class Draw extends AbstractConfig {
     }
 
     mount() {
+        this.ctx.fillStyle = '#000'
+        this.ctx.strokeStyle = '#000'
+        this.ctx.lineWidth = 2
         console.log('mount Draw')
         console.log('Draw canvas', this.canvas);
         console.log('Draw ctx', this.ctx);
@@ -28,9 +31,6 @@ export class Draw extends AbstractConfig {
     }
 
     onMouseDown(e: MouseEvent) {
-        this.ctx.fillStyle = '#000'
-        this.ctx.strokeStyle = '#000'
-        this.ctx.lineWidth = 2
         this.isDownMouse = true
         console.log('onMouseDown', this.canvas);
         this.ctx.beginPath()

@@ -10,7 +10,7 @@ export abstract class AbstractConfig {
         this.canvas = canvas
         this.configType = configType
         console.log('AbstractConfig canvas', this.canvas);
-        this.ctx = canvas.getContext('2d') as CanvasRenderingContext2D
+        this.ctx = this.canvas.getContext('2d') as CanvasRenderingContext2D
         console.log('AbstractConfig ctx', this.ctx);
     }
 
