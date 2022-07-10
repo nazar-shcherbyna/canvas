@@ -38,8 +38,6 @@ class ManagePanelState {
         if (configType !== this.current.configType) {
             this.current.unmount()
             const index = this.configs.findIndex((btn) => btn.configType === configType)
-            console.log('22222222', index);
-            
             this.current = this.configs[index]
             this.current.mount()
         }
