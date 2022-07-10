@@ -12,7 +12,6 @@ class ManagePanelState {
 
     constructor() {
         makeAutoObservable(this)
-        console.log('ManagePanelState');
     }
 
     setSelectedType(selectedType: string) {
@@ -24,7 +23,6 @@ class ManagePanelState {
     }
     
     change(configType: string) {
-        console.log('ManagePanelState change');
         this.setSelectedType(configType)
         if (!this.isUserAction) {
             this.configs = [

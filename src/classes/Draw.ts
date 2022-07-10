@@ -13,9 +13,6 @@ export class Draw extends AbstractConfig {
         this.ctx.fillStyle = '#000'
         this.ctx.strokeStyle = '#000'
         this.ctx.lineWidth = 2
-        console.log('mount Draw')
-        console.log('Draw canvas', this.canvas);
-        console.log('Draw ctx', this.ctx);
         this.canvas.onmousedown = this.onMouseDown.bind(this)
         this.canvas.onmousemove = this.onMouseMove.bind(this)
         this.canvas.onmouseup = this.onMouseUp.bind(this)
@@ -32,7 +29,6 @@ export class Draw extends AbstractConfig {
 
     onMouseDown(e: MouseEvent) {
         this.isDownMouse = true
-        console.log('onMouseDown', this.canvas);
         this.ctx.beginPath()
         this.ctx.moveTo(e.offsetX, e.offsetY)
     }
@@ -41,17 +37,14 @@ export class Draw extends AbstractConfig {
         if (this.isDownMouse) {
             this.ctx.lineTo(e.offsetX, e.offsetY)
             this.ctx.stroke()
-            // this.ctx.arc(e.offsetX, e.offsetY, 2, 0, Math.PI * 2)
-            // this.ctx.fill()
         }
     }
 
-    onMouseUp(e: MouseEvent) {
+    onMouseUp() {
         this.isDownMouse = false
-        // ctx.beginPath()
     }
 
-    onMouseOver(e: MouseEvent) {
+    onMouseOver() {
         this.isDownMouse = false
     }
 }

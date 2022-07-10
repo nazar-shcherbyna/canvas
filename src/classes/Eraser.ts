@@ -13,9 +13,6 @@ export class Eraser extends AbstractConfig {
         this.ctx.fillStyle = 'rgb(205,255,255)'
         this.ctx.strokeStyle = 'rgb(205,255,255)'
         this.ctx.lineWidth = 10
-        console.log('mount Eraser')
-        console.log('Eraser canvas', this.canvas);
-        console.log('Eraser ctx', this.ctx);
         this.canvas.onmousedown = this.onMouseDown.bind(this)
         this.canvas.onmousemove = this.onMouseMove.bind(this)
         this.canvas.onmouseup = this.onMouseUp.bind(this)
@@ -32,7 +29,6 @@ export class Eraser extends AbstractConfig {
 
     onMouseDown(e: MouseEvent) {
         this.isDownMouse = true
-        console.log('onMouseDown', this.canvas);
         this.ctx.beginPath()
         this.ctx.moveTo(e.offsetX, e.offsetY)
     }
@@ -41,17 +37,14 @@ export class Eraser extends AbstractConfig {
         if (this.isDownMouse) {
             this.ctx.lineTo(e.offsetX, e.offsetY)
             this.ctx.stroke()
-            // this.ctx.arc(e.offsetX, e.offsetY, 2, 0, Math.PI * 2)
-            // this.ctx.fill()
         }
     }
 
-    onMouseUp(e: MouseEvent) {
+    onMouseUp() {
         this.isDownMouse = false
-        // ctx.beginPath()
     }
 
-    onMouseOver(e: MouseEvent) {
+    onMouseOver() {
         this.isDownMouse = false
     }
 }
