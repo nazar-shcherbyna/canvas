@@ -6,12 +6,11 @@ export abstract class AbstractConfig {
     configType: string
     
     constructor(canvas: HTMLCanvasElement, configType: string) {
-        console.log('AbstractConfig');
         this.canvas = canvas
         this.configType = configType
-        console.log('AbstractConfig canvas', this.canvas);
+        console.log('AbstractConfig constructor canvas', this.canvas);
         this.ctx = this.canvas.getContext('2d') as CanvasRenderingContext2D
-        console.log('AbstractConfig ctx', this.ctx);
+        console.log('AbstractConfig constructor ctx', this.ctx);
     }
 
     public info() {}

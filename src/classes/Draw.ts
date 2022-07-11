@@ -1,12 +1,10 @@
 import { AbstractConfig } from '../abstractClasses/AbstractConfig'
 
 export class Draw extends AbstractConfig {
-    isDownMouse: boolean
+    isDownMouse = false
 
     constructor(canvas: HTMLCanvasElement) {
-        console.log('Draw');
         super(canvas, 'draw')
-        this.isDownMouse = false
     }
 
     mount() {
@@ -20,7 +18,6 @@ export class Draw extends AbstractConfig {
     }
 
     unmount() {
-        console.log('unmount Draw')
         this.canvas.onmousedown = null
         this.canvas.onmousemove = null
         this.canvas.onmouseup = null
