@@ -6,7 +6,7 @@ import canvasState from './canvasState';
 
 class ManagePanelState {
     selectedType = 'draw'
-    configs!: [Draw, Rectangle, Eraser]
+    configs!: Map<string, Draw | Rectangle | Eraser>
     current!: Draw | Rectangle | Eraser
     isUserAction = false
 
@@ -25,18 +25,17 @@ class ManagePanelState {
     change(configType: string) {
         this.setSelectedType(configType)
         if (!this.isUserAction) {
-            this.configs = [
-                new Draw(canvasState.canvas),
-                new Rectangle(canvasState.canvas),
-                new Eraser(canvasState.canvas),
-            ]
-            this.current = this.configs[0]
+            this.configs = new Map([
+                ['draw', new Draw(canvasState.canvas)],
+                ['rectangle', new Rectangle(canvasState.canvas)],
+                ['eraser', new Eraser(canvasState.canvas)],
+            ])
+            this.current = this.configs.get('draw')!
             this.current.mount()
         }
         if (configType !== this.current.configType) {
             this.current.unmount()
-            const index = this.configs.findIndex((btn) => btn.configType === configType)
-            this.current = this.configs[index]
+            this.current = this.configs.get(configType)!
             this.current.mount()
         }
     }

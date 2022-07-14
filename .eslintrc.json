@@ -38,7 +38,8 @@
         "no-extra-semi": "warn",
         "arrow-spacing": ["warn", { "before": true, "after": true }],
         "prefer-spread": "warn",
-        "spaced-comment": ["warn", "always"]
+        "spaced-comment": ["warn", "always"],
+        "@typescript-eslint/no-non-null-assertion": "off"
     },
     "settings": {
         "import/resolver": {

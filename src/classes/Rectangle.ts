@@ -1,6 +1,6 @@
-import { AbstractConfig } from '../abstractClasses/AbstractConfig'
+import { AbstractTool } from '../abstractClasses/AbstractTool'
 
-export class Rectangle extends AbstractConfig {
+export class Rectangle extends AbstractTool {
     isDownMouse = false
     savedCanvas = ''
     startPosition: {
@@ -59,10 +59,6 @@ export class Rectangle extends AbstractConfig {
 
     onMouseUp(): void {
         this.isDownMouse = false
-        this.startPosition = {
-            x: 0,
-            y: 0,
-        }
     }
 
     onMouseOver(): void {

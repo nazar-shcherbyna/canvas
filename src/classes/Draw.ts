@@ -1,6 +1,6 @@
-import { AbstractConfig } from '../abstractClasses/AbstractConfig'
+import { AbstractTool } from '../abstractClasses/AbstractTool'
 
-export class Draw extends AbstractConfig {
+export class Draw extends AbstractTool {
     isDownMouse = false
 
     constructor(canvas: HTMLCanvasElement) {
