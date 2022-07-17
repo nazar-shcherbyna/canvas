@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
 import { observer } from 'mobx-react-lite'
 import { CanvasSC, CanvasWrappSC } from './styles'
 import canvasState from '../../store/canvasState'
