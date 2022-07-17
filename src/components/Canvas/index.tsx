@@ -7,7 +7,6 @@ import managePanelState from '../../store/managePanelState'
 
 export const Canvas = observer(() => {
     const canvasRef = useRef<HTMLCanvasElement>(null)
-    console.log('Canvas component');
     
     useLayoutEffect(() => {
         if (canvasRef.current) {
