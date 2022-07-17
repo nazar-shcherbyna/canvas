@@ -6,10 +6,10 @@ export class Rectangle extends AbstractTool {
     startPosition: {
         x: number,
         y: number,
-    } = {
+    } = Object.seal({
         x: 0,
         y: 0,
-    }
+    })
 
     constructor(canvas: HTMLCanvasElement) {
         super(canvas, 'rectangle')  
