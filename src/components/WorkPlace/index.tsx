@@ -1,5 +1,5 @@
 import React from 'react'
-import { Canvas } from '../Canvas'
+import { Canvas } from '../Canvas/Canvas'
 import { TopPanel } from '../TopPanel'
 import { WorkPlaceSC } from './styles'
 

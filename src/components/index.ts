@@ -1,2 +1,2 @@
-export * from './Canvas';
-export * from './ManagePanel';
+export * from './Canvas/Canvas';
+export * from './ManagePanel/ManagePanel';
