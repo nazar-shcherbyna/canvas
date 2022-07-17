@@ -1,15 +1,12 @@
 import React from 'react';
-import { Canvas, ManagePanel } from './components';
-import { TopPanel } from './components/TopPanel';
+import { ManagePanel } from './components';
+import { WorkPlace } from './components/WorkPlace';
 
 function App() {
   return (
     <div className="app" id="app">
       <ManagePanel />
-      <section className="canvas-wrapper">
-        <TopPanel />
-        <Canvas />
-      </section>
+      <WorkPlace />
     </div>
   )
 }
