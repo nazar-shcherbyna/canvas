@@ -4,6 +4,7 @@ export const SavePictureModalWrappSC = styled.div`
     display: flex;
     flex-direction: column;
     min-width: 600px;
+    padding: 20px;
 `
 
 export const ImgWrappSC = styled.div`
