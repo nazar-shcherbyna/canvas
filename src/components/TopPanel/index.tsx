@@ -2,10 +2,11 @@ import React from 'react'
 import { observer } from 'mobx-react-lite'
 import { CleanIcon } from '../../assets/icons'
 import managePanelState from '../../store/managePanelState'
-import { TopPanelBtnSC, TopPanelSC } from './styles'
+import { TopPanelSC } from './styles'
 import savePictureState from '../../store/savePictureState'
 import { SavePictureModal } from '../SavePictureModal/SavePictureModal'
 import canvasState from '../../store/canvasState'
+import { Button } from '@mui/material'
 
 const TopPanel = observer(() => {
 
@@ -17,12 +18,22 @@ const TopPanel = observer(() => {
 
     return (
         <TopPanelSC>
-            <TopPanelBtnSC onClick={handleMakePicture}>
+            <Button 
+                onClick={handleMakePicture}
+                variant={'contained'}
+                size={'small'}
+            >
                 make picture
-            </TopPanelBtnSC>  
-            <TopPanelBtnSC onClick={() => managePanelState.change('eraser')}>
+            </Button>  
+            <Button 
+                onClick={() => managePanelState.change('eraser')}
+                variant={'contained'}
+                size={'small'}
+                color={'info'}
+                sx={{ml: '20px'}}
+            >
                 <CleanIcon />
-            </TopPanelBtnSC>
+            </Button>
             <SavePictureModal />
         </TopPanelSC>
     )

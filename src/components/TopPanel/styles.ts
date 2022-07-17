@@ -4,7 +4,8 @@ export const TopPanelSC = styled.div`
     display: flex;
     align-items: center;
     justify-content: right;
-    padding: 10px 20px 10px;
+    padding: 0 20px 0;
+    height: 40px;
 `
 
 export const TopPanelBtnSC = styled.div`
