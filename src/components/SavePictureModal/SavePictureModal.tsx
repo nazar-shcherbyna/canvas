@@ -4,7 +4,7 @@ import { observer } from 'mobx-react-lite'
 import savePictureState from '../../store/savePictureState'
 import { ImgWrappSC, SavePictureModalWrappSC } from './styles'
 
-const SavePictureModal = observer(() => {
+export const SavePictureModal = observer(() => {
 
     const handleClose = () => {
         savePictureState.setIsOpenModal(false)
@@ -33,5 +33,3 @@ const SavePictureModal = observer(() => {
         </Dialog>
     )
 })
-
-export default SavePictureModal
