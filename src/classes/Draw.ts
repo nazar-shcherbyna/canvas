@@ -1,4 +1,5 @@
 import { AbstractTool } from '../abstractClasses/AbstractTool'
+import canvasState from '../store/canvasState'
 
 export class Draw extends AbstractTool {
     isDownMouse = false
@@ -8,8 +9,8 @@ export class Draw extends AbstractTool {
     }
 
     mount() {
-        this.ctx.fillStyle = '#000'
-        this.ctx.strokeStyle = '#000'
+        this.ctx.fillStyle = canvasState.color
+        this.ctx.strokeStyle = canvasState.color
         this.ctx.lineWidth = 2
         this.canvas.onmousedown = this.onMouseDown.bind(this)
         this.canvas.onmousemove = this.onMouseMove.bind(this)

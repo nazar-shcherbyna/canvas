@@ -1,27 +1,37 @@
-import React from 'react'
+import React, { ChangeEvent, lazy, Suspense } from 'react'
 import { observer } from 'mobx-react-lite'
 import { CleanIcon } from '../../assets/icons'
 import managePanelState from '../../store/managePanelState'
 import { TopPanelSC } from './styles'
 import savePictureState from '../../store/savePictureState'
-import { SavePictureModal } from '../SavePictureModal/SavePictureModal'
 import canvasState from '../../store/canvasState'
-import { Button } from '@mui/material'
+import { Button, Input } from '@mui/material'
+import SavePictureModal from '../SavePictureModal/SavePictureModal'
 
 const TopPanel = observer(() => {
 
-    const handleMakePicture = () => {
-        const image = canvasState.canvas.toDataURL()
-        savePictureState.setImage(image)
-        savePictureState.setIsOpenModal(!savePictureState.isOpenModal)
+    const handleMakePicture = (): void => {
+        const image = canvasState.canvas.toDataURL();
+        savePictureState.setImage(image);
+        savePictureState.setIsOpenModal(!savePictureState.isOpenModal);
+    }
+
+    const handleColor = (e: ChangeEvent<HTMLInputElement>): void => {
+        canvasState.setColor(e.target.value);
     }
 
     return (
         <TopPanelSC>
+            <Input 
+                type='color' 
+                style={{width: '50px'}}
+                onChange={handleColor}
+            />
             <Button 
                 onClick={handleMakePicture}
                 variant={'contained'}
                 size={'small'}
+                sx={{ml: '20px'}}
             >
                 make picture
             </Button>  
@@ -34,7 +44,9 @@ const TopPanel = observer(() => {
             >
                 <CleanIcon />
             </Button>
-            <SavePictureModal />
+            <Suspense fallback={<div>Loading</div>}>
+                <SavePictureModal />    
+            </Suspense>
         </TopPanelSC>
     )
 })
